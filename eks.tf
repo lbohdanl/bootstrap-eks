@@ -181,6 +181,14 @@ resource "helm_release" "cilium" {
       kubeProxyReplacement       = true
       k8sServiceHost             = trim(data.aws_eks_cluster.default.endpoint, "https://")
       k8sServicePort             = 443
+      hubble = {
+        relay = {
+          enabled = true
+        }
+        ui = {
+          enabled = true
+        }
+      }
     })
   ]
 
