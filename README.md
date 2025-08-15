@@ -1,2 +1,2 @@
 # bootstrap-eks
-Deploy EKS cluster &amp; all needed infra
+Deploy EKS cluster with Cilium as CNI provider.
