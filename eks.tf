@@ -162,11 +162,11 @@ resource "null_resource" "delete_kube_proxy" {
 
 
 resource "helm_release" "cilium" {
-  name       = "cilium"
-  repository = "https://helm.cilium.io/"
-  chart      = "cilium"
-  namespace  = "kube-system"
-  version    = "1.17.4"
+  name       = var.cilium_release_name
+  repository = var.cilium_repo
+  chart      = var.cilium_chart
+  namespace  = var.cilium_namespace
+  version    = var.cilium_version
 
   values = [
     yamlencode({

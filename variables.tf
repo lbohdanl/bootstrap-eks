@@ -1,3 +1,7 @@
+# # # # # # # # # # #
+# default variables #
+# # # # # # # # # # #
+
 variable "region" {
   type    = string
   default = "eu-central-1"
@@ -54,4 +58,33 @@ variable "kubernetes_version" {
 variable "eks_public_endpoint_cidr" {
   type    = string
   default = ""
+}
+
+# # # # # # # # # # #
+# Cilium variables  #
+# # # # # # # # # # #
+
+variable "cilium_release_name" {
+  type    = string
+  default = "cilium"
+}
+
+variable "cilium_repo" {
+  type    = string
+  default = "https://helm.cilium.io/"
+}
+
+variable "cilium_chart" {
+  type    = string
+  default = "cilium"
+}
+
+variable "cilium_namespace" {
+  type    = string
+  default = "kube-system"
+}
+
+variable "cilium_version" {
+  type    = string
+  default = "1.17.4"
 }
